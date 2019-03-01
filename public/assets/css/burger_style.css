@@ -1,0 +1,24 @@
+body {
+    background-color: #f4e542;
+    align-content: center;
+    text-align: center;
+    width: 40%;
+    margin-left:30%;
+    margin-right:30%;
+}
+
+#burgers-div {
+    float: left;
+}
+
+#eaten-div {
+    float: right;
+}
+
+#add-div {
+    position: absolute;
+}
+
+table {
+    width:100%;
+}

@@ -1,42 +1,56 @@
 <h1>Burgers!</h1>
 
-<img src=".. /public/assets/img/burgerpup.jpg" alt="BurgerPup">
+<img src="../public/assets/img/burger.png" alt="burger-pup" />
 
-<div id="burgers-div" style="width: 40%;">
+<table>
+    <tr>
+        <td>
+            <div id="burgers-div" style="width: 100%;">
 
-    <h2>Burgers to Devour!</h2>
+                <h2>Burgers to Devour!</h2>
 
-    <ul>
-        {{#each burgers}}
-        {{#unless devoured}}
-        {{> burgers/burger-block devoured=true}}
-        {{/unless}}
-        {{/each}}
-    </ul>
+                <ul>
+                    {{#each burgers}}
+                    {{#unless devoured}}
+                    {{> burgers/burger-block devoured=true}}
+                    {{/unless}}
+                    {{/each}}
+                </ul>
 
-</div>
+            </div>
+        </td>
+        <td>
+            <div id="eaten-div" style="width: 100%">
 
-<div id="eaten-div" style="width: 40%">
+                <h2>Burgers Devoured!</h2>
 
-    <h2>Burgers Devoured!</h2>
+                <ul>
+                    {{#each burgers}}
+                    {{#if devoured}}
+                    {{> burgers/burger-block devoured=false}}
+                    {{/if}}
+                    {{/each}}
+                </ul>
 
-    <ul>
-        {{#each burgers}}
-        {{#if devoured}}
-        {{> burgers/burger-block devoured=false}}
-        {{/if}}
-        {{/each}}
-    </ul>
+            </div>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <div id="add-div" style="width: 100%"></div>
 
-</div>
+            <h2>Add a Burger</h2>
+            <form class="create-form">
 
-<h2>Add a Burger</h2>
-<form class="create-form">
+                <div class="form-group">
+                    <label for="ca">Burger Name:</label>
+                    <input type="text" id="ca" name="burger_name">
+                </div>
 
-    <div class="form-group">
-        <label for="ca">Burger Name:</label>
-        <input type="text" id="ca" name="burger_name">
-    </div>
+                <button type="submit">Add Burger</button>
+            </form>
 
-    <button type="submit">Add Burger</button>
-</form>
+            </div>
+        </td>
+    </tr>
+</table>
